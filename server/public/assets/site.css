@@ -1404,3 +1404,61 @@ a.cr-value:hover{color:var(--accent)}
 @media(prefers-reduced-motion:reduce){.hp-fac-main img,.hp-fac-side img{transition:none}}
 
 /* ===== END ===== */
+
+/* =========================================================
+   MOBILE OPTIMIZATION (2026-09-12)
+   ========================================================= */
+@media(max-width:768px){
+  /* 定制流程：改为单列，隐藏大号水印数字（已有序号徽标），修复横向溢出 */
+  .workflow-grid::before{left:17px;top:30px;bottom:30px}
+  .wf-step{grid-template-columns:1fr;gap:0;padding:18px 0 18px 46px;min-width:0}
+  .wf-step::before{left:0;top:26px;transform:none}
+  .wf-num{display:none}
+  .wf-body{min-width:0;padding:20px 18px}
+  .wf-items{grid-template-columns:1fr;gap:8px}
+  .wf-head{gap:8px}
+  .wf-head h4{font-size:18px}
+  .wf-body>p{font-size:14px;line-height:1.7}
+
+  /* 子元素最小内容宽度兜底，避免撑破网格 */
+  .wf-step>*,.wf-body,.wf-items{min-width:0}
+}
+
+@media(max-width:640px){
+  /* 极小标签统一提升到 12px，保证移动端可读性 */
+  .lang-code,.lang-arrow,.flip-hint,.cert-doc-sub,.cert-doc-no,.cert-doc-title,
+  .cert-doc-seal,.cf-step-num,.mat-dot,.mat-dot-num,.scap-tag,.wf-tag,
+  .showcase-cat,.inquiry-badge,small{font-size:12px}
+  .cert-doc-no{letter-spacing:.02em}
+  .flip-hint{letter-spacing:.08em;margin-top:10px}
+
+  /* 触控区域 ≥44px */
+  .nav-toggle{padding:12px;min-width:44px;min-height:44px}
+  .lang-trigger{min-height:38px}
+  .btn{padding:14px 22px;min-height:46px}
+  .hero-slide-btn{min-height:48px;padding:14px 22px}
+  .mat-dot{width:44px;height:44px}
+  .footer-links a{padding:9px 0;display:inline-block}
+
+  /* 表单字号 16px，避免 iOS Safari 聚焦时自动放大 */
+  input,select,textarea{font-size:16px}
+}
+@media(prefers-reduced-motion:reduce){.wf-body{transition:none}}
+
+@media(max-width:640px){
+  /* 页脚语言切换（7 个语言按钮）：允许换行，避免撑破窄屏 */
+  .lang-switch{flex-wrap:wrap;row-gap:4px;max-width:100%}
+  .lang-btn{padding:6px 8px}
+}
+
+@media(max-width:768px){
+  /* 定制流程条目：窄屏改为上下堆叠，避免长文本撑破网格 */
+  .wf-item{flex-direction:column;gap:2px;min-width:0}
+  .wf-item b{min-width:0}
+}
+
+@media(max-width:640px){
+  /* 补充：覆盖更高优先级的极小字号规则 */
+  .lang-trigger .lang-arrow,.lang-menu button .lang-code{font-size:12px}
+  .brand-logo small{font-size:11px;letter-spacing:.14em}
+}
