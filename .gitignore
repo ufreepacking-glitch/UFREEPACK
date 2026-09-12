@@ -20,7 +20,8 @@ server/.env
 *.log
 
 # Not part of the live static site
-factory/
+# 仅忽略仓库根目录的遗留原图目录（勿用 factory/，会误伤 assets/factory/）
+/factory/
 _deploy/
 
 # OS junk
