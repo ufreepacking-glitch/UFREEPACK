@@ -2,10 +2,14 @@
   "name": "ufreepack-server",
   "version": "1.0.0",
   "private": true,
+  "main": "server.js",
   "description": "Express + SQLite backend for ufreepack-website (Phase 1: auth + inquiries CMS)",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "node --watch src/index.js"
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=22.5"
   },
   "dependencies": {
     "dotenv": "^16.4.5",

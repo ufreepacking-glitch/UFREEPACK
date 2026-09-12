@@ -5,7 +5,7 @@
   "description": "UFREEPACK B2B tin box site - Express serves static site + /api + /admin",
   "main": "server.js",
   "engines": {
-    "node": ">=18"
+    "node": ">=22.5"
   },
   "scripts": {
     "start": "node server.js",

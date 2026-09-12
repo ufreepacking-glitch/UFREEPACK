@@ -1,5 +1,12 @@
-// SQLite 单例（node:sqlite，Node 24+ 内置）+ 启动建表 + seed admin
-const { DatabaseSync } = require('node:sqlite');
+// SQLite 单例（node:sqlite，Node 22.5+ 内置）+ 启动建表 + seed admin
+let DatabaseSync;
+try {
+  ({ DatabaseSync } = require('node:sqlite'));
+} catch (err) {
+  console.error('[db] node:sqlite 不可用，请使用 Node >= 22.5（推荐 24）。当前版本:', process.version);
+  console.error('[db] 原始错误:', err && err.message);
+  process.exit(1);
+}
 const fs = require('fs');
 const config = require('./config');
 const { hashPassword } = require('./lib/password');
