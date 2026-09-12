@@ -6,15 +6,13 @@ const path = require('path');
 // 显式读取 server/.env，确保从仓库根目录启动时（Hostinger/生产）也能加载到
 dotenv.config({ path: path.join(__dirname, '..', '.env') });
 
-// 静态站点根目录：兼容两种部署方式
-//  1) Hostinger 根目录 = 仓库根（server/src 向上两级即为站点根）
-//  2) Hostinger 根目录 = server（整个仓库仍会被 clone，向上两级同样是站点根）
-// 逐个候选验证 index.html 是否存在，避免部署结构变化导致整站 404
+// 静态站点根目录：站点文件统一放在 server/public/（随 Hostinger 根目录子树一起部署）
+// 候选依次为 server/public、仓库根、cwd（兼容本地多种启动方式）
 const siteCandidates = [
+  path.join(__dirname, '..', 'public'),
   path.join(__dirname, '..', '..'),
   path.join(process.cwd(), '..'),
   process.cwd(),
-  path.join(__dirname, '..', 'public'),
 ];
 const siteRoot = siteCandidates.find((p) => fs.existsSync(path.join(p, 'index.html')))
   || siteCandidates[0];
