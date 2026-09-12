@@ -1462,3 +1462,10 @@ a.cr-value:hover{color:var(--accent)}
   .lang-trigger .lang-arrow,.lang-menu button .lang-code{font-size:12px}
   .brand-logo small{font-size:11px;letter-spacing:.14em}
 }
+
+@media(max-width:1024px){
+  /* 顶栏精简：隐藏 WhatsApp 按钮（移动菜单内已有），避免把汉堡按钮挤出视口 */
+  .nav-inner{gap:16px;flex-wrap:nowrap}
+  .nav-right{gap:12px;margin-left:auto;flex:0 0 auto;min-width:0}
+  .nav-right>.btn{display:none}
+}
