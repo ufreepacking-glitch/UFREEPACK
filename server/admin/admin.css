@@ -1,0 +1,85 @@
+/* UFREEPACK Admin — vanilla, 复用站点色板 */
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#f4f6f9;color:#222;line-height:1.5;font-size:14px;}
+.topbar{background:#1a3a6e;color:#fff;padding:0 20px;height:54px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+.topbar .brand{font-weight:700;font-size:18px;letter-spacing:.5px;}
+.topbar .brand span{font-weight:400;opacity:.7;font-size:14px;margin-left:6px;}
+.topbar-right{display:flex;align-items:center;gap:14px;}
+.stats-mini{font-size:12px;opacity:.85;}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff;padding:5px 12px;border-radius:4px;cursor:pointer;font-size:13px;}
+.btn-ghost:hover{background:rgba(255,255,255,.12);}
+.card{max-width:380px;margin:60px auto;background:#fff;padding:24px 28px;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.08);}
+.card h2{color:#1a3a6e;margin-bottom:16px;font-size:18px;}
+form label{display:block;margin-bottom:12px;font-size:13px;color:#555;}
+form input,form select,form textarea{display:block;width:100%;padding:8px 10px;margin-top:4px;border:1px solid #ccc;border-radius:4px;font-size:14px;font-family:inherit;}
+form textarea{resize:vertical;}
+.btn-primary{background:#2a7ae0;color:#fff;border:none;padding:8px 18px;border-radius:4px;cursor:pointer;font-size:14px;font-weight:600;}
+.btn-primary:hover{background:#1e6bc4;}
+.btn-danger{background:#c0392b;color:#fff;border:none;padding:8px 18px;border-radius:4px;cursor:pointer;font-size:14px;font-weight:600;}
+.err{color:#c0392b;font-size:13px;margin-top:8px;}
+#listView{padding:16px 20px;}
+.toolbar{background:#fff;padding:10px 14px;border-radius:8px;margin-bottom:14px;display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;box-shadow:0 1px 4px rgba(0,0,0,.06);}
+.toolbar label{font-size:13px;color:#555;}
+.toolbar input,.toolbar select{padding:6px 10px;border:1px solid #ccc;border-radius:4px;font-size:13px;}
+.table-wrap{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);}
+table{width:100%;border-collapse:collapse;}
+thead th{background:#1a3a6e;color:#fff;text-align:left;padding:10px 12px;font-size:12px;font-weight:600;white-space:nowrap;}
+tbody td{padding:9px 12px;border-bottom:1px solid #eee;font-size:13px;vertical-align:top;}
+tbody tr:hover{background:#f0f6ff;}
+.empty{padding:24px;text-align:center;color:#999;}
+.pager{display:flex;justify-content:center;align-items:center;gap:16px;margin-top:14px;}
+.pager .btn-ghost{border-color:#2a7ae0;color:#2a7ae0;}
+.pager .btn-ghost:disabled{opacity:.4;cursor:not-allowed;}
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;}
+.badge.new{background:#e8f0fe;color:#1a3a6e;}
+.badge.read{background:#fff5e6;color:#a06100;}
+.badge.replied{background:#e6f9ee;color:#1a6b3a;}
+.badge.archived{background:#eee;color:#888;}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;z-index:1000;padding:20px;}
+.modal:not([hidden]){display:flex;}
+.modal-card{background:#fff;border-radius:8px;max-width:640px;width:100%;max-height:88vh;overflow:hidden;display:flex;flex-direction:column;}
+.modal-card>header{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid #eee;}
+.modal-card>header h3{color:#1a3a6e;font-size:16px;}
+.modal-card>header .btn-ghost{border:1px solid #ccc;color:#666;font-size:20px;padding:0 8px;line-height:24px;}
+.modal-body{padding:16px 20px;overflow-y:auto;flex:1;}
+.modal-body label{display:block;margin-top:14px;font-size:13px;color:#555;}
+.kv{display:flex;gap:8px;padding:4px 0;font-size:13px;border-bottom:1px dashed #f0f0f0;}
+.kv span{color:#888;min-width:80px;}
+.kv b{font-weight:600;color:#222;word-break:break-all;}
+.msg{background:#f7f7f7;padding:8px;border-radius:4px;white-space:pre-wrap;word-break:break-word;font-size:13px;}
+.modal-card>footer{padding:12px 20px;border-top:1px solid #eee;display:flex;justify-content:space-between;gap:10px;}
+@media(max-width:760px){
+  .table-wrap{overflow-x:auto;}
+  thead th,tbody td{font-size:12px;padding:7px 8px;}
+}
+
+/* ===== 登录视觉交互（悬停/聚焦输入框切换插画） ===== */
+.login-stage{display:flex;gap:0;max-width:780px;margin:54px auto 32px;align-items:stretch;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 10px 36px rgba(26,58,110,.20)}
+.login-visual{flex:1.05;position:relative;min-height:430px;background:radial-gradient(circle at 50% 34%,#264a8a 0%,#16306a 56%,#0f234e 100%);overflow:hidden}
+.login-visual::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 82% 88%,rgba(200,133,45,.22),transparent 55%);pointer-events:none}
+.lv-pane{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transform:scale(.94);transition:opacity .4s ease,transform .4s ease;pointer-events:none}
+.lv-pane svg{filter:drop-shadow(0 6px 18px rgba(0,0,0,.25))}
+.login-visual[data-state="default"] .lv-default,
+.login-visual[data-state="user"] .lv-user,
+.login-visual[data-state="pass"] .lv-pass{opacity:1;visibility:visible;transform:scale(1)}
+.lv-caption{position:absolute;left:0;right:0;bottom:0;height:56px;background:linear-gradient(to top,rgba(15,35,78,.92),transparent);display:block}
+.lv-caption span{position:absolute;left:0;right:0;bottom:18px;text-align:center;opacity:0;transition:opacity .4s ease;font-size:13px;letter-spacing:.08em;color:#fbf6ee;font-weight:500;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.login-visual[data-state="default"] [data-lv="default"],
+.login-visual[data-state="user"] [data-lv="user"],
+.login-visual[data-state="pass"] [data-lv="pass"]{opacity:1}
+.login-card{max-width:none;width:340px;flex:0 0 340px;margin:0;border-radius:0;box-shadow:none;padding:40px 34px;display:flex;flex-direction:column;justify-content:center}
+.login-card h2{margin-bottom:22px}
+.login-card .btn-primary{margin-top:6px;width:100%}
+@media(max-width:760px){
+  .login-stage{flex-direction:column;max-width:380px;margin:24px auto 24px}
+  .login-visual{flex:none;min-height:200px}
+  .lv-pane svg{width:120px;height:120px}
+  .login-card{width:auto;flex:none;padding:30px 26px}
+}
+@media(max-width:480px){
+  .login-visual{min-height:170px}
+  .lv-pane svg{width:104px;height:104px}
+}
+@media(prefers-reduced-motion:reduce){
+  .lv-pane,.lv-caption span{transition:opacity .2s ease;transform:none!important}
+}

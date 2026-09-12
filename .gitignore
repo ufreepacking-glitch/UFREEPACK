@@ -21,7 +21,6 @@ server/.env
 
 # Not part of the live static site
 factory/
-server/
 _deploy/
 
 # OS junk

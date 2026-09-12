@@ -1,0 +1,19 @@
+{
+  "name": "ufreepack-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "UFREEPACK B2B tin box site - Express serves static site + /api + /admin",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
