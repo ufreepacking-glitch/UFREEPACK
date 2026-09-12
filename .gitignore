@@ -1,0 +1,25 @@
+# Temp / working dirs
+_scan/
+_trash/
+_dev/
+_originals/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Secrets
+.env
+.env.*
+!.env.example
+server/.env
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.log
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini

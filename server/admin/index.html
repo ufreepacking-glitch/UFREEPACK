@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UFREEPACK Admin</title>
+<link rel="stylesheet" href="admin.css?v=3">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">UFREEPACK <span>Admin</span></div>
+  <div class="topbar-right">
+    <span id="dashStats" class="stats-mini"></span>
+    <button id="logoutBtn" class="btn-ghost" hidden>登出</button>
+  </div>
+</header>
+
+<!-- 登录视图 -->
+<div class="login-stage" id="loginStage">
+  <div class="login-visual" id="loginVisual" data-state="default">
+    <div class="lv-pane lv-default">
+      <svg viewBox="0 0 200 200" width="170" height="170" aria-hidden="true">
+        <circle cx="100" cy="100" r="70" fill="none" stroke="#c8852d" stroke-width="2.5"/>
+        <circle cx="100" cy="100" r="62" fill="none" stroke="#c8852d" stroke-width="1" opacity=".45"/>
+        <text x="100" y="122" text-anchor="middle" font-family="Georgia,serif" font-size="58" font-weight="700" fill="#fbf6ee">T</text>
+      </svg>
+    </div>
+    <div class="lv-pane lv-user">
+      <svg viewBox="0 0 200 200" width="170" height="170" aria-hidden="true">
+        <circle cx="100" cy="100" r="70" fill="none" stroke="#c8852d" stroke-width="2.5"/>
+        <circle cx="100" cy="88" r="17" fill="none" stroke="#fbf6ee" stroke-width="3"/>
+        <path d="M70 140 Q70 112 100 112 Q130 112 130 140" fill="none" stroke="#fbf6ee" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="134" cy="134" r="17" fill="#16306a" stroke="#c8852d" stroke-width="2"/>
+        <path d="M125 134 l6 6 l11 -12" fill="none" stroke="#c8852d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="lv-pane lv-pass">
+      <svg viewBox="0 0 200 200" width="170" height="170" aria-hidden="true">
+        <circle cx="100" cy="100" r="70" fill="none" stroke="#c8852d" stroke-width="2.5"/>
+        <path d="M100 60 L134 73 L134 104 Q134 130 100 144 Q66 130 66 104 L66 73 Z" fill="none" stroke="#fbf6ee" stroke-width="3" stroke-linejoin="round"/>
+        <circle cx="100" cy="99" r="8" fill="none" stroke="#c8852d" stroke-width="2.5"/>
+        <path d="M97 105 L97 120 M103 105 L103 120" stroke="#c8852d" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="lv-caption">
+      <span data-lv="default">UFREEPACK 管理控制台</span>
+      <span data-lv="user">输入管理员账号</span>
+      <span data-lv="pass">输入访问密钥</span>
+    </div>
+  </div>
+  <section id="loginView" class="card login-card">
+    <h2>管理员登录</h2>
+    <form id="loginForm">
+      <label>用户名
+        <input type="text" id="loginUser" required autocomplete="username">
+      </label>
+      <label>密码
+        <input type="password" id="loginPass" required autocomplete="current-password">
+      </label>
+      <button type="submit" class="btn-primary">登录</button>
+      <p id="loginError" class="err" hidden></p>
+    </form>
+  </section>
+</div>
+
+<!-- 列表视图 -->
+<section id="listView" hidden>
+  <div class="toolbar">
+    <label>状态
+      <select id="filterStatus">
+        <option value="">全部</option>
+        <option value="new">new</option>
+        <option value="read">read</option>
+        <option value="replied">replied</option>
+        <option value="archived">archived</option>
+      </select>
+    </label>
+    <label>搜索
+      <input type="search" id="filterQ" placeholder="姓名 / 邮箱 / 公司">
+    </label>
+    <button id="searchBtn" class="btn-primary">查询</button>
+    <button id="resetBtn" class="btn-ghost">重置</button>
+  </div>
+
+  <div class="table-wrap">
+    <table id="listTable">
+      <thead>
+        <tr>
+          <th>ID</th><th>姓名</th><th>邮箱</th><th>公司</th><th>数量</th>
+          <th>语言</th><th>状态</th><th>提交时间</th><th>操作</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <p id="emptyHint" class="empty" hidden>暂无询盘</p>
+  </div>
+
+  <div class="pager">
+    <button id="prevBtn" class="btn-ghost">上一页</button>
+    <span id="pageInfo"></span>
+    <button id="nextBtn" class="btn-ghost">下一页</button>
+  </div>
+</section>
+
+<!-- 编辑 modal -->
+<div id="modal" class="modal" hidden>
+  <div class="modal-card">
+    <header><h3>询盘详情 #<span id="modalId"></span></h3><button id="modalClose" class="btn-ghost">×</button></header>
+    <div class="modal-body">
+      <div class="kv"><span>姓名</span><b id="vName"></b></div>
+      <div class="kv"><span>邮箱</span><b id="vEmail"></b></div>
+      <div class="kv"><span>电话</span><b id="vPhone"></b></div>
+      <div class="kv"><span>公司</span><b id="vCompany"></b></div>
+      <div class="kv"><span>数量</span><b id="vQty"></b></div>
+      <div class="kv"><span>语言</span><b id="vLang"></b></div>
+      <div class="kv"><span>来源</span><b id="vSource"></b></div>
+      <div class="kv"><span>提交时间</span><b id="vCreated"></b></div>
+      <div class="kv"><span>WhatsApp</span><b id="vWa"></b></div>
+      <div class="kv"><span>项目描述</span><pre id="vMessage" class="msg"></pre></div>
+      <label>状态
+        <select id="vStatus">
+          <option value="new">new</option>
+          <option value="read">read</option>
+          <option value="replied">replied</option>
+          <option value="archived">archived</option>
+        </select>
+      </label>
+      <label>管理员备注
+        <textarea id="vNotes" rows="4"></textarea>
+      </label>
+    </div>
+    <footer>
+      <button id="deleteBtn" class="btn-danger">删除</button>
+      <button id="saveBtn" class="btn-primary">保存</button>
+    </footer>
+  </div>
+</div>
+
+<script src="admin.js?v=2"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /_originals/
+Disallow: /_dev/
+Disallow: /server/
+Disallow: /_trash/
+Disallow: /factory/
+
+Sitemap: https://ufreepack.com/sitemap.xml

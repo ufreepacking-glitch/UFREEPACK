@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- UFREEPACK favicon: tin-box silhouette + U monogram, brass on ink -->
+  <defs>
+    <linearGradient id="brass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d99a3e"/>
+      <stop offset="1" stop-color="#b0761f"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#1c1a17"/>
+  <!-- tin can body -->
+  <rect x="16" y="18" width="32" height="30" rx="4" fill="none" stroke="url(#brass)" stroke-width="3"/>
+  <!-- lid rim -->
+  <line x1="12" y1="18" x2="52" y2="18" stroke="url(#brass)" stroke-width="3" stroke-linecap="round"/>
+  <!-- U monogram -->
+  <path d="M24 28 v8 a8 8 0 0 0 16 0 v-8" fill="none" stroke="url(#brass)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
