@@ -651,7 +651,7 @@ var B2B_PATCH={
     'cb.download':'Download Catalog','cb.sample':'Request Sample','cb.quote':'Get Quote','cb.working':'Business Hours',
     'cb.addr':'Shanghai, China',
     // Hero slider 1 (Factory Capacity)
-    'hs1.eyebrow':'Shanghai Youfuli · UFREEPACK · Since 2025','hs1.kicker':'One-Stop Tin Box Manufacturer',
+    'hs1.eyebrow':'Shanghai Youfuli · UFREEPACK · 20 Years in Tin Packaging','hs1.kicker':'One-Stop Tin Box Manufacturer',
     'hs1.title':'Premium Tin Packaging, <em>Crafted</em> for Global Brands',
     'hs1.sub':'From food-grade chocolate tins to luxury gift boxes — 3,000+ ready molds, 3M+ cans per month, direct factory pricing and 15-day rapid sampling. Contact Alex directly.',
     'hs1.cta1':'Start Your Project →','hs1.cta2':'Book a Factory Tour',
@@ -745,7 +745,7 @@ var B2B_PATCH={
   zh:{
     'cb.person':'Alex','cb.mobile':'181 6447 0172','cb.mail':'ufreepacking@gmail.com','cb.hours':'周一至周五 9:00-18:00 (GMT+8)',
     'cb.download':'下载产品目录','cb.sample':'索取免费样品','cb.quote':'获取报价','cb.working':'工作时间','cb.addr':'中国上海',
-    'hs1.eyebrow':'上海优芙利工艺礼品有限公司 · UFREEPACK · 始于2025','hs1.kicker':'一站式铁盒定制工厂',
+    'hs1.eyebrow':'上海优芙利工艺礼品有限公司 · UFREEPACK · 20 年铁盒行业积淀','hs1.kicker':'一站式铁盒定制工厂',
     'hs1.title':'为全球品牌打造的<em>高端铁盒</em>包装方案',
     'hs1.sub':'从食品级巧克力罐到高端礼品铁盒——3000+现成模具、月产300万+罐、工厂直供价，15天快速打样。直接联系Alex。',
     'hs1.cta1':'开启项目 →','hs1.cta2':'预约参观工厂',
@@ -829,7 +829,7 @@ var B2B_PATCH={
       'cb.person':'Alex','cb.mobile':'+86 181 6447 0172','cb.mail':'ufreepacking@gmail.com','cb.hours':'月〜金 9:00-18:00 (GMT+8)',
       'cb.download':'カタログDL','cb.sample':'サンプル請求','cb.quote':'見積もり','cb.working':'営業時間','cb.addr':'中国上海',
       // Hero slider 1
-      'hs1.eyebrow':'上海優芙利工芸礼品 · UFREEPACK · 2025年設立','hs1.kicker':'ワンストップ缶製造工場',
+      'hs1.eyebrow':'上海優芙利工芸礼品 · UFREEPACK · 缶パッケージ業界20年','hs1.kicker':'ワンストップ缶製造工場',
       'hs1.title':'世界ブランド向け<em>高級ブリキ缶</em>パッケージ',
       'hs1.sub':'食品級チョコ缶からラグジュアリーギフト缶まで——既存金型3,000+、月産300万缶以上、工場直価格、15日迅速サンプル。Alexに直接ご連絡を。',
       'hs1.cta1':'プロジェクト開始 →','hs1.cta2':'工場見学予約',
@@ -919,7 +919,7 @@ var B2B_PATCH={
       'cb.person':'Alex','cb.mobile':'+86 181 6447 0172','cb.mail':'ufreepacking@gmail.com','cb.hours':'Lun-Vie 9:00-18:00 GMT+8',
       'cb.download':'Catálogo PDF','cb.sample':'Solicitar Muestra','cb.quote':'Cotización','cb.working':'Horario','cb.addr':'Shanghái, China',
       // Hero slider 1
-      'hs1.eyebrow':'Shanghai Youfuli · UFREEPACK · Desde 2025','hs1.kicker':'Fábrica Integral de Latas',
+      'hs1.eyebrow':'Shanghai Youfuli · UFREEPACK · 20 años en packaging metálico','hs1.kicker':'Fábrica Integral de Latas',
       'hs1.title':'Envases de Hojalata <em>Premium</em> para Marcas Globales',
       'hs1.sub':'Desde latas de chocolate grado alimenticio hasta cajas de lujo: 3,000+ moldes listos, 3M+ unidades/mes, precio directo de fábrica, muestreo en 15 días. Contacta directamente a Alex.',
       'hs1.cta1':'Iniciar Proyecto →','hs1.cta2':'Visitar Fábrica',
@@ -1010,7 +1010,7 @@ var B2B_PATCH={
       'cb.person':'أليكس','cb.mobile':'+86 181 6447 0172','cb.mail':'ufreepacking@gmail.com','cb.hours':'الاثنين–الجمعة 9:00–18:00',
       'cb.download':'الكتالوج','cb.sample':'اطلب عينة','cb.quote':'التسعير','cb.working':'ساعات العمل','cb.addr':'شنغهاي، الصين',
       // Hero slider 1
-      'hs1.eyebrow':'شنغهاي يوفولي · UFREEPACK · منذ 2025','hs1.kicker':'مصنع متكامل لعلب الصفيح',
+      'hs1.eyebrow':'شنغهاي يوفولي · UFREEPACK · خبرة 20 عاماً في التغليف المعدني','hs1.kicker':'مصنع متكامل لعلب الصفيح',
       'hs1.title':'علب صفيح <em>فاخرة</em> للعلامات العالمية',
       'hs1.sub':'من علب الشوكولاتة الغذائية إلى صناديق الهدايا الراقية — 3000+ قالب جاهز، 3 ملايين+ علبة شهرياً، سعر المصنع، وجمع عينات خلال 15 يوماً. اتصل مباشرة بأليكس.',
       'hs1.cta1':'ابدأ مشروعك →','hs1.cta2':'احجز زيارة المصنع',
@@ -1101,7 +1101,7 @@ var B2B_PATCH={
       'cb.person':'Alex','cb.mobile':'+86 181 6447 0172','cb.mail':'ufreepacking@gmail.com','cb.hours':'월~금 9:00-18:00 GMT+8',
       'cb.download':'카탈로그 다운','cb.sample':'샘플 요청','cb.quote':'견적','cb.working':'영업시간','cb.addr':'중국 상하이',
       // Hero slider 1
-      'hs1.eyebrow':'상하이 유푸리 공예품 · UFREEPACK · 2025년 설립','hs1.kicker':'원스톱 주석 상자 공장',
+      'hs1.eyebrow':'상하이 유풸리 공예품 · UFREEPACK · 금속 포장 20년','hs1.kicker':'원스톱 주석 상자 공장',
       'hs1.title':'글로벌 브랜드를 위한 <em>프리미엄</em> 주석 포장',
       'hs1.sub':'식품급 초콜릿 캔부터 럭셔리 선물 상자까지——기존 금형 3,000+、월 3M+ 캔、공장 직수 가격、15일 신속 샘플링. Alex에게 직접 문의.',
       'hs1.cta1':'프로젝트 시작 →','hs1.cta2':'공장 견적 예약',
@@ -1192,7 +1192,7 @@ var B2B_PATCH={
       'cb.person':'Alex','cb.mobile':'+86 181 6447 0172','cb.mail':'ufreepacking@gmail.com','cb.hours':'Seg-Sex 9:00-18:00 GMT+8',
       'cb.download':'Catálogo','cb.sample':'Amostra Grátis','cb.quote':'Cotação','cb.working':'Horário','cb.addr':'Shanghái, China',
       // Hero slider 1
-      'hs1.eyebrow':'Shanghai Youfuli · UFREEPACK · Desde 2025','hs1.kicker':'Fábrica Integral de Latas',
+      'hs1.eyebrow':'Shanghai Youfuli · UFREEPACK · 20 anos em embalagem metálica','hs1.kicker':'Fábrica Integral de Latas',
       'hs1.title':'Embalagens de Lata <em>Premium</em> para Marcas Globais',
       'hs1.sub':'De latas de chocolate a caixas de presente: 3.000+ moldes, 3M+ unidades/mês, preço direto de fábrica, amostragem em 15 dias. Contate diretamente Alex.',
       'hs1.cta1':'Iniciar Projeto →','hs1.cta2':'Agendar Visita',
