@@ -1505,9 +1505,9 @@ a.cr-value:hover{color:var(--accent)}
 /* JS wraps the grid row into .brand-marquee and clones it once;
    translateX(-50%) then loops the two identical halves seamlessly. */
 .brand-marquee{overflow:hidden;display:flex;width:100vw;margin-left:calc(50% - 50vw);-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%)}
-.brand-marquee .brand-wall-row{display:flex;width:max-content;gap:0;animation:brandScroll 48s linear infinite;will-change:transform}
+.brand-marquee .brand-wall-row{display:flex;flex-shrink:0;min-width:max-content;width:max-content;gap:0;animation:brandScroll 48s linear infinite;will-change:transform}
 .brand-marquee:hover .brand-wall-row{animation-play-state:paused}
-.brand-marquee .brand-logo{flex-shrink:0;padding:10px 44px}
+.brand-marquee .brand-logo{flex-shrink:0;width:auto;padding:10px 44px}
 @keyframes brandScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(max-width:768px){
   .brand-marquee .brand-logo{padding:8px 26px}
