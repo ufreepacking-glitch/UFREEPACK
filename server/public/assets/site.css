@@ -1469,3 +1469,55 @@ a.cr-value:hover{color:var(--accent)}
   .nav-right{gap:12px;margin-left:auto;flex:0 0 auto;min-width:0}
   .nav-right>.btn{display:none}
 }
+
+/* ============================================================
+   ANIMATION PACK v46 — aseeli-style (ref: yqiand-d5.myshopify.com)
+   1) Trust marquee: infinite key-facts ticker under hero
+   2) Ken Burns: slow cinematic zoom on active hero slide photo
+   3) Brand wall: seamless infinite logo scroll
+   ============================================================ */
+
+/* ----- 1) TRUST MARQUEE ----- */
+.trust-marquee{background:#f2e3bd;overflow:hidden;padding:16px 0;border-top:1px solid var(--border);position:relative;z-index:2}
+.trust-track{display:flex;align-items:center;width:max-content;direction:ltr;animation:trustScroll 28s linear infinite;will-change:transform}
+.trust-marquee:hover .trust-track{animation-play-state:paused}
+.trust-group{display:flex;align-items:center;flex-shrink:0}
+.trust-item{display:flex;align-items:center;gap:10px;padding:0 30px;font-size:15px;font-weight:700;color:var(--text);white-space:nowrap;letter-spacing:.01em}
+.trust-ico{width:20px;height:20px;min-width:20px;display:flex;align-items:center;justify-content:center;color:var(--green)}
+.trust-ico svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.trust-dot{width:4px;height:4px;border-radius:50%;background:rgba(42,30,16,.35);flex-shrink:0}
+@keyframes trustScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:640px){
+  .trust-marquee{padding:12px 0}
+  .trust-item{padding:0 18px;gap:8px;font-size:12px}
+  .trust-ico{width:17px;height:17px;min-width:17px}
+  .trust-track{animation-duration:20s}
+}
+
+/* ----- 2) KEN BURNS CINEMATIC ZOOM (hero) ----- */
+/* Inactive slides rest at scale(1.12); the active one eases down to 1 over 14s,
+   giving the photo a living, video-like motion between slide transitions. */
+.hero-slide .hero-slide-bg{transform:scale(1.12)}
+.hero-slide.active .hero-slide-bg{animation:heroKenburns 14s cubic-bezier(.22,1,.36,1) forwards}
+@keyframes heroKenburns{from{transform:scale(1.12)}to{transform:scale(1)}}
+
+/* ----- 3) BRAND WALL — seamless infinite scroll ----- */
+/* JS wraps the grid row into .brand-marquee and clones it once;
+   translateX(-50%) then loops the two identical halves seamlessly. */
+.brand-marquee{overflow:hidden;display:flex;width:100vw;margin-left:calc(50% - 50vw);-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%)}
+.brand-marquee .brand-wall-row{display:flex;width:max-content;gap:0;animation:brandScroll 48s linear infinite;will-change:transform}
+.brand-marquee:hover .brand-wall-row{animation-play-state:paused}
+.brand-marquee .brand-logo{flex-shrink:0;padding:10px 44px}
+@keyframes brandScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:768px){
+  .brand-marquee .brand-logo{padding:8px 26px}
+  .brand-marquee .brand-wall-row{animation-duration:36s}
+}
+
+/* ----- Reduced motion: slow everything way down (aseeli approach) ----- */
+@media(prefers-reduced-motion:reduce){
+  .trust-track{animation-duration:80s}
+  .brand-marquee .brand-wall-row{animation-duration:160s}
+  .hero-slide.active .hero-slide-bg{animation:none}
+  .hero-slide .hero-slide-bg{transform:none}
+}

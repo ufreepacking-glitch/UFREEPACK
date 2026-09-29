@@ -1452,6 +1452,24 @@ function initHeroSlider(){
 })();
 
 /* =========================================================
+   BRAND WALL — wrap + clone row for seamless marquee loop
+   (pairs with .brand-marquee CSS in site.css v46)
+   ========================================================= */
+function initBrandMarquee(){
+  var row=document.querySelector('.brand-wall .brand-wall-row');
+  if(!row||row.getAttribute('data-cloned')==='1') return;
+  row.setAttribute('data-cloned','1');
+  var wrap=document.createElement('div');
+  wrap.className='brand-marquee';
+  row.parentNode.insertBefore(wrap,row);
+  var clone=row.cloneNode(true);
+  clone.setAttribute('aria-hidden','true');
+  clone.removeAttribute('data-cloned');
+  wrap.appendChild(row);
+  wrap.appendChild(clone);
+}
+
+/* =========================================================
    PAGE DOM READY
    ========================================================= */
 (function pageInit(){
@@ -1459,6 +1477,7 @@ function initHeroSlider(){
     applyLang(curLang);
     renderB2BTexts();
     initHeroSlider();
+    initBrandMarquee();
     // Scroll reveals are driven by the IntersectionObserver above (.reveal → .visible).
     // Do NOT force .visible here — that killed the staggered entrance animations.
     // Counters: only boot-animate those NOT inside a .reveal container;
